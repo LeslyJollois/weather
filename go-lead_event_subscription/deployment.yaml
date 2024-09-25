@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stg-go-lead-event-subscription
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: stg-go-lead-event-subscription
+  template:
+    metadata:
+      labels:
+        app: stg-go-lead-event-subscription
+    spec:
+      containers:
+      - name: stg-go-lead-event-subscription
+        image: europe-west1-docker.pkg.dev/weather-436309/stg-go-lead-event-subscription/go-lead_event_subscription:latest
+        env:
+        - name: ENV_VAR_FILE
+          value: ".env"

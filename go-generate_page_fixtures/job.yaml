@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: stg-go-generate-page-fixtures
+spec:
+  template:
+    spec:
+      containers:
+      - name: stg-go-generate-page-fixtures
+        image: europe-west1-docker.pkg.dev/weather-436309/stg-go-generate-page-fixtures/stg-go-generate_page_fixtures:latest
+        env:
+        - name: ENV_VAR_FILE
+          value: ".env"
+        command: ["./generate_page_fixtures"]
+      restartPolicy: OnFailure

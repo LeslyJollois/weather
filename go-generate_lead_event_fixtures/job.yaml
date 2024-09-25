@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: stg-go-generate-lead-event-fixtures
+spec:
+  template:
+    spec:
+      containers:
+      - name: stg-go-generate-lead-event-fixtures
+        image: europe-west1-docker.pkg.dev/weather-436309/stg-go-generate-lead-event-fixtures/stg-go-generate_lead_event_fixtures:latest
+        env:
+        - name: ENV_VAR_FILE
+          value: ".env"
+        command: ["./generate_lead_event_fixtures"]
+      restartPolicy: OnFailure

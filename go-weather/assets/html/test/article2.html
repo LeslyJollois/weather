@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Long Article Example</title>
+    
+    <!-- Open Graph meta tags -->
+    <meta property="og:type" content="article">
+    <meta property="og:article:published_time" content="2024-09-17T08:00:33+00:00"/>
+    <meta property="og:title" content="Example Article 2">
+    <meta property="og:description" content="This is a detailed description of a long article for testing purposes.">
+    <meta property="og:article:section" content="Sport"/>
+    <meta property="og:url" content="https://www.example.com/article-2.html">
+    <meta property="og:image" content="https://www.example.com/images/article-2.jpg">
+    <meta property="og:article:content_tier" content="locked"/>
+    <meta property="og:locale" content="en_US"/>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.example.com/article-2.html">
+    
+    <!-- Include the Weather JavaScript library -->
+    <script src="/weather.js" defer></script>
+    
+    <!-- User data object -->
+    <script>
+        window._weather = window._weather || {};
+        window._weather.consent = true;
+        window._weather.config = {
+            onCouldUnsubscribe: (intensity) => {
+                console.log('churn suspicion', intensity);
+            },
+            onCouldSubscribe: (intensity) => {
+                console.log('could subscribe', intensity);
+            }
+        };
+        window._weather.userData = {
+            userID: "user123",
+            email: "user@example.com",
+            firstName: "John",
+            lastName: "Doe", 
+            isSubscriber: true,
+            subscriptionKey: "ESSADIMENS1299PRIO"
+        };
+    </script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        .content {
+            max-width: 800px;
+            margin: auto;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <article>
+            <h1>Example Article 2</h1>
+            <p>This is a very long article meant for testing the scroll data collection functionality. It includes a lot of text to ensure that scrolling behavior can be thoroughly tested. The following sections include various content to simulate a real-world article scenario.</p>
+        
+            <!-- Section 1 -->
+            <div class="section">
+                <h2>Introduction</h2>
+                <p>Welcome to this comprehensive article that dives deep into the subject at hand. The introduction aims to set the stage for the discussion that will follow, outlining the key topics and giving an overview of what the reader can expect.</p>
+                <p>In today's digital world, tracking user interactions is more important than ever. This article serves as an example for testing user engagement through scrolling behavior. In the following sections, we will delve deeper into the methods and tools used to capture this data effectively.</p>
+                <p><a href="/test/article-1.html">See article 1</a></p>
+            </div>
+        
+            <!-- Section 2 -->
+            <div class="section">
+                <h2>Main Content</h2>
+                <p>The main body of this article focuses on best practices for structuring content that engages readers. We'll explore how well-organized sections and logical flow can enhance user experience and ensure that visitors stay longer on your page.</p>
+                <p>One key strategy is to divide your content into digestible parts, using headings and subheadings to guide readers through the text. This approach not only makes your article more accessible but also helps retain attention in longer pieces.</p>
+                <p>We will also look at how incorporating multimedia elements, like videos and images, can enrich the content and encourage readers to interact more with your page. These elements provide a dynamic experience that keeps users engaged.</p>
+            </div>
+        
+            <!-- Section 3 -->
+            <div class="section">
+                <h2>Additional Information</h2>
+                <p>In this section, we explore how personalization and relevant content play crucial roles in user retention. Modern web experiences increasingly rely on data-driven personalization, helping to tailor content based on user behavior.</p>
+                <p>Case studies from major websites show that when content is personalized, it leads to higher user satisfaction and engagement rates. Tools that analyze scrolling and interaction data offer insights into how users consume content, allowing creators to make data-informed adjustments to optimize their articles.</p>
+                <p>Moreover, as content consumption evolves, it is essential to adapt and update the way information is presented. Keeping up with user expectations is vital in creating a memorable and engaging digital experience.</p>
+            </div>
+        
+            <!-- Section 4 -->
+            <div class="section">
+                <h2>Conclusion</h2>
+                <p>In conclusion, the way content is structured and presented can significantly impact reader engagement. By applying the strategies discussed throughout this article, such as logical structuring and personalization, you can enhance the user experience on your site.</p>
+                <p>To summarize, content presentation matters as much as the content itself. A well-organized article not only holds the reader's attention but also improves overall satisfaction, leading to better retention and a more meaningful interaction with your page.</p>
+            </div>
+        </article>
+    </div>
+</body>
+</html>

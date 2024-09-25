@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Long Article Example</title>
+    
+    <!-- Open Graph meta tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR"/>
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "NewsMediaOrganization",
+          "headline": "Test Site"
+        }
+    </script>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.example.com/">
+    
+    <!-- Include the Weather JavaScript library -->
+    <script src="/weather.js" defer></script>
+    
+    <!-- User data object -->
+    <script>
+        window._weather = window._weather || {};
+        window._weather.consent = true;
+        window._weather.userData = {
+            userID: "user123",
+            email: "user@example.com",
+            firstName: "John",
+            lastName: "Doe", 
+            isSubscriber: true
+        };
+    </script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        .content {
+            max-width: 800px;
+            margin: auto;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <section>
+            <h1>Home</h1>
+            
+            <!-- Section 1 -->
+            <div class="section">
+                <h2>Links</h2>
+                <p><a href="/test/article-1.html">See article 1</a></p>
+                <p><a href="/test/article-2.html">See article 2</a></p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

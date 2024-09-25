@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: stg-go-generate-article-content-vector
+spec:
+  schedule: "*/1 * * * *"
+  concurrencyPolicy: "Forbid"
+  jobTemplate:
+    spec:
+      parallelism: 1
+      completions: 1
+      template:
+        spec:
+          containers:
+          - name: stg-go-generate-article-content-vector
+            image: europe-west1-docker.pkg.dev/weather-436309/stg-go-generate-article-content-vector/stg-go-generate_article_content_vector:latest
+            env:
+            - name: ENV_VAR_FILE
+              value: ".env"
+            command: ["./generate_article_content_vector"]
+          restartPolicy: OnFailure

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stg-go-weather
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stg-go-weather
+  template:
+    metadata:
+      labels:
+        app: stg-go-weather
+    spec:
+      containers:
+      - name: stg-go-weather
+        image: europe-west1-docker.pkg.dev/weather-436309/stg-go-weather/stg-go-weather:latest
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: "100m"
+          limits:
+            memory: "150Mi"
+            cpu: "150m"
+        env:
+        - name: ENV_VAR_FILE
+          value: ".env"

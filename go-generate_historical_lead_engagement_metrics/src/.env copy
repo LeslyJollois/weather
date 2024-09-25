@@ -1,0 +1,9 @@
+# Global configuration
+ENV=stg
+
+# PostgreSQL configuration
+POSTGRES_DSN=postgres://weather:HuBRj4F8tZOSX@34.140.208.159:5432/weather?sslmode=disable
+
+# GCP configuration
+GCP_PROJECT_ID=weather-436309
+GCP_CREDENTIALS_FILE=gcp-service-account.json

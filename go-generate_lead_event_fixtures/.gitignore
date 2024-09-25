@@ -1,0 +1,10 @@
+# Ignorer le dossier de construction Go
+bin/
+# Ignorer le dossier de modules
+vendor/
+# Ignorer les fichiers temporaires
+*.tmp
+*.log
+src/.env
+src/.env.stg
+src/gcp-service-account.json

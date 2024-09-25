@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather - Exaly</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: #ffffff;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+
+        header .logo img {
+            height: 20px;
+        }
+
+        header nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        header nav a {
+            color: #08586f;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        header nav a:hover {
+            color: #03313e;
+        }
+
+        header .language-switcher {
+            display: flex;
+            gap: 10px;
+        }
+
+        header .language-switcher a {
+            color: #08586f;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        header .language-switcher a:hover {
+            color: #03313e;
+        }
+
+        section {
+            min-height: calc(100vh - 120px);
+            display: flex;
+            justify-content: center;
+            padding: 60px 120px;
+            text-align: center;
+        }
+
+        #about-us {
+            align-items: flex-start;
+            flex-direction: column;
+            background-image: url(/images/banner.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+        }
+
+        #about-us .logo img {
+            width: 40vw;
+        }
+
+        #about-us p {
+            width: 40vw;
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        #about-us .cta {
+            background: #26576d;
+            color: #ffffff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        #about-us .cta:hover {
+            background: #3a81a1;
+        }
+
+        #about-us .cta:focus {
+            outline: none;
+        }
+
+        /* Section Styles */
+        #solution {
+            align-items: center;
+            flex-direction: column;
+            background: #ffffff;
+            color: #333;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        #solution .header {
+            width: 100%;
+        }
+
+        #solution .header h2 {
+            font-size: 36px;
+            margin-bottom: 0;
+            color: #333333;
+            text-transform: uppercase;
+        }
+
+        #solution .header h2 img {
+            width: 10vw;
+        }
+
+        #solution .header p {
+            font-size: 18px;
+            margin-top: 0;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            color: #333333;
+        }
+
+        #solution .product-features {
+            display: flex;
+            max-width: 80vw;
+            margin: 0 auto;
+        }
+
+        #solution .feature {
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        #solution .feature h3 {
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #3a81a1;
+            font-weight: normal;
+            text-align: left;
+        }
+
+        #solution .feature p {
+            font-size: 16px;
+            margin: 0;
+            text-align: left;
+            color: #333333;
+        }
+
+        #solution .cta {
+            background: #26576d;
+            color: #ffffff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 30px;
+            display: inline-block;
+        }
+
+        #solution .cta:hover {
+            background: #3a81a1;
+        }
+
+        #solution .cta:focus {
+            outline: none;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 36px;
+            color: #ffffff;
+        }
+
+        /* Contact section */
+        #contact {
+            align-items: center;
+            background: #f4f4f4;
+            color: #333;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #333333;
+        }
+
+        #contact form {
+            width: 50vw;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        #contact .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        #contact .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            color: #333;
+        }
+
+        #contact .form-group input, #contact .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        #contact .form-group textarea {
+            resize: vertical;
+        }
+
+        #contact .cta {
+            background: #26576d;
+            color: #ffffff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        #contact .cta:hover {
+            background: #3a81a1;
+        }
+
+        #contact .cta:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="/images/logo-text-only.png" alt="Exaly"></div>
+        <nav>
+            <a href="#about-us">About Us</a>
+            <a href="#solution">Our Solution</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="language-switcher">
+            <a href="/fr">FR</a>
+            <a href="/en">EN</a>
+        </div>
+    </header>
+
+    <section id="about-us">
+        <h2>Looking for Better Data Insights?</h2>
+        <p>At Exaly, we specialize in making data accessible and actionable for your business. Our solutions are designed to help you make informed decisions and drive growth.</p>
+        <a href="#solution" class="cta">Our Solution</a>
+    </section>
+
+    <section id="solution">
+        <div class="header">
+            <h2><img src="/images/logo-weather.png" alt="Weather" /></h2>
+            <p>Weather is a powerful data collection and analytics system designed specifically for online media. <br />It helps you unlock the full potential of your data with advanced features and insightful metrics.</p>
+        </div>
+        <div class="product-features">
+            <div class="feature">
+                <h3>Article Recommendations</h3>
+                <p>Weather analyzes visitor behavior and preferences to generate personalized article recommendations, boosting engagement and retention.</p>
+            </div>
+            <div class="feature">
+                <h3>Subscription Insights</h3>
+                <p>Gain valuable insights into visitor subscription behaviors with our risk and propensity indicators. Identify high-risk users and target potential subscribers with precision.</p>
+            </div>
+            <div class="feature">
+                <h3>Data-Driven Decisions</h3>
+                <p>Make informed decisions with comprehensive data analysis and reporting. Weather provides you with actionable insights to optimize your content strategy and grow your audience.</p>
+            </div>
+        </div>
+        <a href="/weather" target="_blank" class="cta">Learn More</a>
+    </section>
+
+    <section id="contact">
+        <div>
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="cta">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            let sections = Array.from(document.querySelectorAll('section'));
+            let currentIndex = 0;
+            let isScrolling = false;
+
+            function scrollToSection(index) {
+                if (index < 0 || index >= sections.length || isScrolling) return;
+                isScrolling = true;
+                currentIndex = index;
+                const targetSection = sections[index];
+                const targetPosition = targetSection.offsetTop;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+
+                setTimeout(() => {
+                    isScrolling = false;
+                }, 1000);
+            }
+
+            window.addEventListener('wheel', (event) => {
+                if (isScrolling) return;
+
+                const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+                sections.forEach((section, index) => {
+                    const sectionTop = section.offsetTop;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        currentIndex = index;
+                    }
+                });
+
+                if (event.deltaY > 0) {
+                    scrollToSection(currentIndex + 1);
+                } else if (event.deltaY < 0) {
+                    scrollToSection(currentIndex - 1);
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                scrollToSection(currentIndex);
+            });
+        });
+    </script>
+</body>
+</html>

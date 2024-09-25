@@ -1,0 +1,21 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: stg-go-generate-lead-section-article-count
+spec:
+  schedule: "*/1 * * * *"
+  concurrencyPolicy: "Forbid"
+  jobTemplate:
+    spec:
+      parallelism: 1
+      completions: 1
+      template:
+        spec:
+          containers:
+          - name: stg-go-generate-lead-section-article-count
+            image: europe-west1-docker.pkg.dev/weather-436309/stg-go-generate-lead-section-article-count/stg-go-generate_lead_section_article_count:latest
+            env:
+            - name: ENV_VAR_FILE
+              value: ".env"
+            command: ["./generate_lead_section_article_count"]
+          restartPolicy: OnFailure

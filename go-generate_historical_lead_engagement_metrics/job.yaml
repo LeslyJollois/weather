@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: stg-go-generate-historical-lead-engagement-metrics
+spec:
+  template:
+    spec:
+      containers:
+      - name: stg-go-generate-historical-lead-engagement-metrics
+        image: europe-west1-docker.pkg.dev/weather-436309/stg-go-generate-historical-lead-engagement-metrics/stg-go-generate_historical_lead_engagement_metrics:latest
+        env:
+        - name: ENV_VAR_FILE
+          value: ".env"
+        - name: START_DATE
+          value: "2024-07-06T13:00:00Z"
+        - name: END_DATE
+          value: "2024-10-04T13:00:00Z"
+        command: ["./generate_historical_lead_engagement_metrics"]
+      restartPolicy: OnFailure

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Long Article Example</title>
+    
+    <!-- Open Graph meta tags -->
+    <meta property="og:type" content="article">
+    <meta property="og:article:published_time" content="2024-09-17T08:00:33+00:00"/>
+    <meta property="og:title" content="Exemple d'Article 1">
+    <meta property="og:description" content="Ceci est un article très long destiné à tester la fonctionnalité de collecte des données de défilement.">
+    <meta property="og:article:section" content="International"/>
+    <meta property="og:url" content="https://www.example.com/article-1.html">
+    <meta property="og:image" content="https://www.example.com/images/article-1.jpg">
+    <meta property="og:locale" content="fr_FR"/>
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "NewsArticle",
+          "datePublished": "2024-09-19T09:04:34+02:00",
+          "dateModified": "2024-09-27T12:13:20+02:00",
+          "headline": "Long Article Example 1",
+          "description": "This is a detailed description of a long article for testing purposes.",
+          "url": "https://www.example.com/article-1",
+          "image": "https://www.example.com/images/article-1.jpg",
+          "articleSection": ["International", "Politique"]
+        }
+    </script>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.example.com/article-1.html">
+    
+    <!-- Include the Weather JavaScript library -->
+    <script src="/weather.js" defer></script>
+    
+    <!-- User data object -->
+    <script>
+        window._weather = window._weather || {};
+        window._weather.consent = false;
+        window._weather.config = {
+            onCouldUnsubscribe: (intensity) => {
+                console.log('could unsubscribe', intensity);
+            },
+            onCouldSubscribe: (intensity) => {
+                console.log('could subscribe', intensity);
+                document.body.insertAdjacentHTML('afterbegin', '<div class="subscribe"><p>Abonnez-vous pour accéder à tous nos articles !</p></div>');
+            }
+        };
+        window._weather.userData = {
+            userID: "user123",
+            email: "user@example.com",
+            firstName: "John",
+            lastName: "Doe",
+            isSubscriber: true,
+            subscriptionKey: "ESSADIMENS1299PRIO"
+        };
+    </script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .subscribe {
+            display: flex;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff6d3;
+        }
+            .subscribe p {
+                margin: 0;
+                text-align: center;
+                font-weight: bold;
+                color: #01364f;
+            }
+        .subscribe + .content {
+            margin-top: 40px;
+        }
+        .content {
+            max-width: 800px;
+            margin: auto;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <article>
+            <h1>Exemple d'Article 1</h1>
+            <p>Ceci est un article très long destiné à tester la fonctionnalité de collecte des données de défilement. Il inclut beaucoup de texte pour s'assurer que le comportement de défilement peut être correctement testé. Les sections suivantes contiennent divers contenus pour simuler un scénario d'article réel.</p>
+        
+            <!-- Section 1 -->
+            <div class="section">
+                <h2>Introduction</h2>
+                <p>Bienvenue dans cet article qui explore un sujet en profondeur. Nous allons couvrir divers aspects pour offrir une vue d'ensemble complète. Dans cette première section, nous poserons les bases avec une introduction claire et concise.</p>
+                <p>La collecte de données est devenue un enjeu majeur dans de nombreux secteurs, et le suivi des interactions des utilisateurs est particulièrement crucial dans le domaine du contenu numérique. Ce texte sert d'exemple pour une telle expérience. Les paragraphes suivants fourniront plus de détails.</p>
+                <p><a href="/test/article-2.html">Voir l'article 2</a></p>
+            </div>
+        
+            <!-- Section 2 -->
+            <div class="section">
+                <h2>Contenu Principal</h2>
+                <p>Le cœur de cet article se concentre sur les différentes manières dont le contenu peut être structuré pour maximiser l'engagement des lecteurs. Chaque section est organisée de manière à guider le lecteur à travers une progression logique des idées.</p>
+                <p>Une bonne structuration du contenu est essentielle pour maintenir l'intérêt du lecteur. Nous aborderons des stratégies telles que l'utilisation d'exemples, de sous-titres, et de visuels pour renforcer le message principal. Dans cette section, nous examinons également les avantages d'un texte bien organisé et comment cela améliore l'expérience utilisateur.</p>
+                <p>L'ajout d'éléments interactifs, comme des vidéos ou des graphiques, peut aussi aider à capter l'attention des lecteurs et les encourager à passer plus de temps sur la page.</p>
+            </div>
+        
+            <!-- Section 3 -->
+            <div class="section">
+                <h2>Informations Supplémentaires</h2>
+                <p>Dans cette partie, nous allons explorer certaines études de cas qui montrent comment la conception de contenu influence le comportement des utilisateurs. Ces exemples illustrent l'importance de la personnalisation du contenu en fonction du public cible.</p>
+                <p>Les tendances actuelles dans la consommation de contenu montrent une préférence pour des articles plus visuels et interactifs, où les lecteurs peuvent non seulement lire, mais aussi interagir avec les données en temps réel. Cela permet d'enrichir leur expérience et d'offrir une valeur ajoutée par rapport à un texte statique.</p>
+                <p>De plus, des outils d'analyse avancés permettent désormais aux créateurs de contenu de suivre précisément comment les utilisateurs interagissent avec les différentes parties d'une page, leur permettant d'ajuster et d'optimiser leur contenu en conséquence.</p>
+            </div>
+        
+            <!-- Section 4 -->
+            <div class="section">
+                <h2>Conclusion</h2>
+                <p>Pour conclure, la manière dont le contenu est présenté est tout aussi importante que son contenu en lui-même. Les utilisateurs sont plus susceptibles d'interagir avec un article bien structuré et engageant. En appliquant les stratégies décrites dans cet article, vous pouvez améliorer l'expérience utilisateur et augmenter le temps passé sur votre site.</p>
+                <p>En résumé, la clé d'une bonne expérience de lecture réside dans l'équilibre entre un contenu pertinent et une présentation claire. Une fois cet équilibre atteint, l'engagement et la satisfaction des utilisateurs en seront naturellement renforcés.</p>
+            </div>
+        </article>
+    </div>
+</body>
+</html>
